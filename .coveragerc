@@ -1,0 +1,6 @@
+[report]
+include =
+    src/sixfeetup/*
+omit =
+    */test*
+    */upgrades/*
