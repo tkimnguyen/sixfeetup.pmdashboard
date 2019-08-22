@@ -18,4 +18,12 @@
       directory="static"
       />
 
+   <browser:page
+     name="project_view"
+     for="*"
+     template="templates/project_view.pt"
+     permission="zope2.View"
+     />
+
+
 </configure>

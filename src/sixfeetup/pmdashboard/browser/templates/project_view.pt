@@ -1,0 +1,77 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
+    xmlns:tal="http://xml.zope.org/namespaces/tal"
+    xmlns:metal="http://xml.zope.org/namespaces/metal"
+    xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+    lang="en"
+    metal:use-macro="context/@@main_template/macros/master"
+    i18n:domain="plone">
+<body>
+
+<metal:content-core fill-slot="content-core">
+<metal:content-core define-macro="content-core"
+                    tal:define="toc context/table_of_contents|nothing;">
+  <div id="parent-fieldname-text"
+      tal:condition="context/text"
+      tal:content="structure python:context.text.output_relative_to(view.context)"
+      tal:attributes="class python: toc and 'pat-autotoc' or ''" />
+
+  <div id="slack_channel"
+      tal:define="slack_channel context/slack_channel"
+      tal:condition="slack_channel"
+      tal:content="structure string: <h2><a href='${slack_channel}'>Slack channel</a></h2>" />
+
+  <div id="project_manager"
+      tal:define="project_manager context/project_manager"
+      tal:condition="project_manager"
+      tal:content="structure string: <h2><a href='${project_manager}'>Project manager</a></h2>" />
+
+  <div id="tech_lead"
+      tal:define="tech_lead context/tech_lead"
+      tal:condition="tech_lead"
+      tal:content="structure string: <h2><a href='${tech_lead}'>Tech lead</a></h2>" />
+
+  <div id="estimated_vs_actual"
+       tal:define="url context/estimated_vs_actual"
+       tal:condition="url"
+       tal:content="structure string: <h2>Estimated vs Actual</h2> <iframe src='${url}' width='1500' height='500'></iframe>" />
+
+  <div id="timetask_feed"
+       tal:define="url context/timetask_feed"
+       tal:condition="url"
+       tal:content="structure string: <h2>TimeTask Feed</h2> <iframe src='${url}' width='1500' height='500'></iframe>" />
+
+  <div id="ganttic_tasks"
+       tal:define="url context/ganttic_tasks"
+       tal:condition="url"
+       tal:content="structure string: <h2>Ganttic Tasks</h2> <iframe src='${url}' width='1500' height='500'></iframe>" />
+
+  <div id="active_tickets"
+       tal:define="url context/active_tickets"
+       tal:condition="url"
+       tal:content="structure string: <h2>Active Tickets</h2> <iframe src='${url}' width='1500' height='500'></iframe>" />
+
+  <div id="tickets_to_watch"
+       tal:define="url context/tickets_to_watch"
+       tal:condition="url"
+       tal:content="structure string: <h2>Tickets to Watch</h2> <iframe src='${url}' width='1500' height='500'></iframe>" />
+
+  <div id="spec_book"
+       tal:define="url context/spec_book"
+       tal:condition="url"
+       tal:content="structure string: <h2>Spec Book</h2> <iframe src='${url}' width='1500' height='500'></iframe>" />
+
+  <div id="open_tickets_by_owner"
+       tal:define="url context/open_tickets_by_owner"
+       tal:condition="url"
+       tal:content="structure string: <h2>Open Tickets by Owner</h2> <iframe src='${url}' width='1500' height='500'></iframe>" />
+
+  <div id="comps"
+       tal:define="url context/comps"
+       tal:condition="url"
+       tal:content="structure string: <h2><a href='${url}'>Comps</a></h2>" />
+
+</metal:content-core>
+</metal:content-core>
+
+</body>
+</html>
