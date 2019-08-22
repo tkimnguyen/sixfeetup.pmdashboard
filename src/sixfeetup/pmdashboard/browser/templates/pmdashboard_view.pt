@@ -1,0 +1,54 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
+    xmlns:tal="http://xml.zope.org/namespaces/tal"
+    xmlns:metal="http://xml.zope.org/namespaces/metal"
+    xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+    lang="en"
+    metal:use-macro="context/@@main_template/macros/master"
+    i18n:domain="plone">
+<body>
+
+<metal:content-core fill-slot="content-core">
+<metal:content-core define-macro="content-core">
+
+  <div  style="text-align: center; vert-align: middle;">
+    <div tal:repeat="client_item context/items">
+      <div tal:define="client python:client_item[1]; client_url python: client.absolute_url()">
+        <h2 colspan="0" style="padding: 15px;"
+           tal:content="structure string:<h2><a href='${client_url}'>${client/Title}</a></h2>"></h2>
+        <table>
+          <div tal:repeat="project_item client/items">
+            <tr tal:define="project python:project_item[1]; project_url python: project.absolute_url()">
+              <td
+                style="padding: 15px;" tal:content="structure string:<a href='${project_url}'>${project/Title}</a>"></td>
+              <td
+                style="padding: 15px;" tal:content="structure string:<a href='${project/slack_channel}'>Slack Channel</a>"></td>
+              <td
+                style="padding: 15px;" tal:content="structure string:<a href='${project/project_manager}'>PM (Slack)</a>"></td>
+              <td
+                style="padding: 15px;" tal:content="structure string:<a href='${project/tech_lead}'>Tech Lead (Slack)</a>"></td>
+              <td
+                style="padding: 15px;" tal:content="structure string:<a href='${project/estimated_vs_actual}'>Est vs Actual</a>"></td>
+              <td
+                style="padding: 15px;" tal:content="structure string:<a href='${project/timetask_feed}'>TimeTask Feed</a>"></td>
+              <td
+                style="padding: 15px;" tal:content="structure string:<a href='${project/ganttic_tasks}'>Ganttic Tasks</a>"></td>
+              <td
+                style="padding: 15px;" tal:content="structure string:<a href='${project/active_tickets}'>Active Tickets</a>"></td>
+              <td
+                style="padding: 15px;" tal:content="structure string:<a href='${project/tickets_to_watch}'>Tickets to Watch</a>"></td>
+              <td style="padding: 15px;" tal:content="structure string:<a href='${project/spec_book}'>Spec Book</a>"></td>
+              <td
+                style="padding: 15px;" tal:content="structure string:<a href='${project/open_tickets_by_owner}'>Open Tickets by Owner</a>"></td>
+              <td style="padding: 15px;" tal:content="structure string:<a href='${project/comps}'>Comps</a>"></td>
+            </tr>
+          </div>
+        </table>
+      </div>
+    </div>
+  </div>
+
+</metal:content-core>
+</metal:content-core>
+
+</body>
+</html>

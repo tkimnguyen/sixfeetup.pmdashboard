@@ -30,6 +30,12 @@
      template="templates/client_view.pt"
      permission="zope2.View"
      />
+   <browser:page
+     name="pmdashboard_view"
+     for="*"
+     template="templates/pmdashboard_view.pt"
+     permission="zope2.View"
+     />
 
 
 </configure>
