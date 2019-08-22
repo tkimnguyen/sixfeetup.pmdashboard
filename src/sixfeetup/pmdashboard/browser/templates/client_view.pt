@@ -18,11 +18,11 @@
           <td
             style="padding: 15px;" tal:content="structure string:<a href='${project_url}'>${project/Title}</a>"></td>
           <td
-            style="padding: 15px;" tal:content="structure string:<a href='${project/slack_channel}'>Slack Channel</a>"></td>
+            style="padding: 15px;" tal:content="structure string:<a href='${project/slack_channel}'>${project/slack_channel_name} (Slack)</a>"></td>
           <td
-            style="padding: 15px;" tal:content="structure string:<a href='${project/project_manager}'>PM (Slack)</a>"></td>
+            style="padding: 15px;" tal:content="structure string:<a href='${project/project_manager}'>${project/project_manager_name} (PM)</a>"></td>
           <td
-            style="padding: 15px;" tal:content="structure string:<a href='${project/tech_lead}'>Tech Lead (Slack)</a>"></td>
+            style="padding: 15px;" tal:content="structure string:<a href='${project/tech_lead}'>${project/tech_lead_name} (Tech lead)</a>"></td>
           <td
             style="padding: 15px;" tal:content="structure string:<a href='${project/estimated_vs_actual}'>Est vs Actual</a>"></td>
           <td
