@@ -24,6 +24,12 @@
      template="templates/project_view.pt"
      permission="zope2.View"
      />
+   <browser:page
+     name="client_view"
+     for="*"
+     template="templates/client_view.pt"
+     permission="zope2.View"
+     />
 
 
 </configure>
