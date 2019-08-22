@@ -32,7 +32,9 @@
      />
    <browser:page
      name="pmdashboard_view"
-     for="*"
+     menu="plone_displayviews"
+     title="Project Management Dashboard"
+     for="plone.app.contenttypes.interfaces.IFolder"
      template="templates/pmdashboard_view.pt"
      permission="zope2.View"
      />

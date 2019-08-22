@@ -18,17 +18,17 @@
   <div id="slack_channel"
       tal:define="slack_channel context/slack_channel"
       tal:condition="slack_channel"
-      tal:content="structure string: <h2><a href='${slack_channel}'>Slack channel</a></h2>" />
+      tal:content="structure string: <h2><a href='${slack_channel}'>Slack channel: ${context/slack_channel_name}</a></h2>" />
 
   <div id="project_manager"
       tal:define="project_manager context/project_manager"
       tal:condition="project_manager"
-      tal:content="structure string: <h2><a href='${project_manager}'>Project manager</a></h2>" />
+      tal:content="structure string: <h2><a href='${project_manager}'>Project manager: ${context/project_manager_name}</a></h2>" />
 
   <div id="tech_lead"
       tal:define="tech_lead context/tech_lead"
       tal:condition="tech_lead"
-      tal:content="structure string: <h2><a href='${tech_lead}'>Tech lead</a></h2>" />
+      tal:content="structure string: <h2><a href='${tech_lead}'>Tech lead: ${context/tech_lead_name}</a></h2>" />
 
   <div id="estimated_vs_actual"
        tal:define="url context/estimated_vs_actual"
