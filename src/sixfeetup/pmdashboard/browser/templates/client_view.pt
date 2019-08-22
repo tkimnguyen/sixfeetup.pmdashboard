@@ -11,25 +11,23 @@
 <metal:content-core define-macro="content-core">
 
   <div class="dashboard_client" tal:repeat="item context/items">
-    <div class="dashboard_project"
-       tal:define="project python:item[1]">
       <table style="text-align: center; vert-align: middle;">
-          <tr>
-          <td style="padding: 15px;" tal:content="structure string:<a href='${project/Title}'>${project/Title}</a>"></td>
-          <td style="padding: 15px;" tal:content="structure string:<a href='${project/slack_channel}'>Slack Channel</a>"></td>
-          <td style="padding: 15px;" tal:content="structure string:<a href='${project/project_manager}'>PM (Slack)</a>"></td>
-          <td style="padding: 15px;" tal:content="structure string:<a href='${project/tech_lead}'>Tech Lead (Slack)</a>"></td>
-          <td style="padding: 15px;" tal:content="structure string:<a href='${project/estimated_vs_actual}'>Est vs Actual</a>"></td>
-          <td style="padding: 15px;" tal:content="structure string:<a href='${project/timetask_feed}'>TimeTask Feed</a>"></td>
-          <td style="padding: 15px;" tal:content="structure string:<a href='${project/ganttic_tasks}'>Ganttic Tasks</a>"></td>
-          <td style="padding: 15px;" tal:content="structure string:<a href='${project/active_tickets}'>Active Tickets</a>"></td>
-          <td style="padding: 15px;" tal:content="structure string:<a href='${project/tickets_to_watch}'>Tickets to Watch</a>"></td>
-          <td style="padding: 15px;" tal:content="structure string:<a href='${project/spec_book}'>Spec Book</a>"></td>
-          <td style="padding: 15px;" tal:content="structure string:<a href='${project/open_tickets_by_owner}'>Open Tickets by Owner</a>"></td>
-          <td style="padding: 15px;" tal:content="structure string:<a href='${project/comps}'>Comps</a>"></td>
-        </tr>
+        <tr class="dashboard_project"
+           tal:define="project python:item[1]">
+              <td style="padding: 15px;" tal:content="structure string:<a href='${project/Title}'>${project/Title}</a>"></td>
+              <td style="padding: 15px;" tal:content="structure string:<a href='${project/slack_channel}'>Slack Channel</a>"></td>
+              <td style="padding: 15px;" tal:content="structure string:<a href='${project/project_manager}'>PM (Slack)</a>"></td>
+              <td style="padding: 15px;" tal:content="structure string:<a href='${project/tech_lead}'>Tech Lead (Slack)</a>"></td>
+              <td style="padding: 15px;" tal:content="structure string:<a href='${project/estimated_vs_actual}'>Est vs Actual</a>"></td>
+              <td style="padding: 15px;" tal:content="structure string:<a href='${project/timetask_feed}'>TimeTask Feed</a>"></td>
+              <td style="padding: 15px;" tal:content="structure string:<a href='${project/ganttic_tasks}'>Ganttic Tasks</a>"></td>
+              <td style="padding: 15px;" tal:content="structure string:<a href='${project/active_tickets}'>Active Tickets</a>"></td>
+              <td style="padding: 15px;" tal:content="structure string:<a href='${project/tickets_to_watch}'>Tickets to Watch</a>"></td>
+              <td style="padding: 15px;" tal:content="structure string:<a href='${project/spec_book}'>Spec Book</a>"></td>
+              <td style="padding: 15px;" tal:content="structure string:<a href='${project/open_tickets_by_owner}'>Open Tickets by Owner</a>"></td>
+              <td style="padding: 15px;" tal:content="structure string:<a href='${project/comps}'>Comps</a>"></td>
+            </tr>
       </table>
-    </div>
   </div>
 
 </metal:content-core>
